@@ -1,0 +1,214 @@
+:root {
+    --ink: #27364b;
+    --muted: #68778a;
+    --line: #d9e0e8;
+    --surface: #ffffff;
+    --blue: #2268b2;
+    --blue-dark: #174c86;
+    --blue-soft: #edf5fd;
+    --row-alt: #f7f9fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 42px 18px;
+    color: var(--ink);
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    line-height: 1.55;
+    background: linear-gradient(145deg, #eef4fb 0%, #f8fafc 55%, #edf2f8 100%);
+}
+
+.survey-card {
+    width: min(960px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(39, 54, 75, 0.13);
+}
+
+.survey-header {
+    padding: 38px 44px;
+    background: var(--blue-soft);
+    border-left: 8px solid var(--blue);
+}
+
+.eyebrow {
+    margin: 0 0 5px;
+    color: var(--blue-dark);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.15;
+}
+
+.survey-header > p:last-child {
+    margin: 10px 0 0;
+    color: var(--muted);
+}
+
+form { padding: 38px 44px 44px; }
+
+.form-section {
+    margin-bottom: 28px;
+}
+
+.form-section + .form-section {
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.align-start { align-items: start; }
+
+.form-field > label,
+legend {
+    display: block;
+    margin-bottom: 9px;
+    color: #32475f;
+    font-weight: bold;
+}
+
+select,
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    color: var(--ink);
+    font: inherit;
+    border: 1px solid #adbac9;
+    border-radius: 7px;
+    background: white;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid rgba(34, 104, 178, 0.15);
+    border-color: var(--blue);
+}
+
+textarea { resize: vertical; }
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px 26px;
+}
+
+.choice-list {
+    display: grid;
+    gap: 10px;
+}
+
+.choice-row label,
+.choice-list label {
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    vertical-align: -3px;
+    accent-color: var(--blue);
+}
+
+.price-inputs {
+    display: grid;
+    grid-template-columns: auto minmax(90px, 1fr) auto 92px;
+    align-items: start;
+    gap: 8px;
+}
+
+.price-inputs > span { padding-top: 11px; font-weight: bold; }
+.price-inputs small { display: block; margin-top: 5px; color: var(--muted); }
+
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+}
+
+table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+}
+
+tr:last-child th,
+tr:last-child td { border-bottom: 0; }
+th:last-child,
+td:last-child { border-right: 0; }
+thead th { color: #38516d; background: var(--blue-soft); font-size: 13px; }
+thead th:first-child { min-width: 285px; text-align: left; }
+tbody th { text-align: left; font-size: 14px; }
+tbody tr:nth-child(even) { background: var(--row-alt); }
+td label { display: grid; place-items: center; cursor: pointer; }
+td label span { display: none; }
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 4px;
+}
+
+button {
+    padding: 12px 24px;
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    border: 0;
+    border-radius: 7px;
+    background: var(--blue);
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible { background: var(--blue-dark); }
+
+.button-secondary {
+    color: #435872;
+    background: #e6ebf1;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible { background: #d7dee7; }
+
+@media (max-width: 700px) {
+    body { padding: 16px 10px; }
+    .survey-header, form { padding-left: 22px; padding-right: 22px; }
+    .two-columns { grid-template-columns: 1fr; }
+    .form-actions { flex-direction: column; }
+    button { width: 100%; }
+}

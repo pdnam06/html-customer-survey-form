@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="survey-card">
+        <header class="survey-header">
+            <p class="eyebrow">CUSTOMER SURVEY</p>
+            <h1>Market Research Survey</h1>
+            <p>Please take a few moments to complete this satisfaction survey.</p>
+        </header>
+
+        <form action="#" method="POST">
+            <section class="form-section two-columns">
+                <div class="form-field">
+                    <label for="age-range">What is your age range?</label>
+                    <select id="age-range" name="age_range">
+                        <option value="18-24">18-24</option>
+                        <option value="25-34">25-34</option>
+                        <option value="35-50">35-50</option>
+                        <option value="50+">50+</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="income-range">What is your yearly income range?</label>
+                    <select id="income-range" name="income_range">
+                        <option value="0-25000">$0 - $25,000</option>
+                        <option value="25001-50000">$25,001 - $50,000</option>
+                        <option value="50001-100000">$50,001 - $100,000</option>
+                        <option value="100000+">$100,000+</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <fieldset>
+                    <legend>Gender Identity</legend>
+                    <div class="choice-row">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="nonbinary"> Nonbinary</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="form-section">
+                <fieldset>
+                    <legend>
+                        Which of the following products have you purchased in the last
+                        2 months? Please check all that apply.
+                    </legend>
+                    <div class="choice-row">
+                        <label><input type="checkbox" name="products" value="product-1"> Product 1</label>
+                        <label><input type="checkbox" name="products" value="product-2"> Product 2</label>
+                        <label><input type="checkbox" name="products" value="product-3"> Product 3</label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="form-section two-columns align-start">
+                <fieldset>
+                    <legend>How often would you use our new product?</legend>
+                    <div class="choice-list">
+                        <label><input type="radio" name="usage_frequency" value="daily"> Daily</label>
+                        <label><input type="radio" name="usage_frequency" value="weekly"> Weekly</label>
+                        <label><input type="radio" name="usage_frequency" value="monthly"> Monthly</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-field">
+                    <label>What would you pay for the new product?</label>
+                    <div class="price-inputs">
+                        <span aria-hidden="true">$</span>
+                        <div>
+                            <input type="number" name="price_dollars" min="0" aria-label="Dollars">
+                            <small>Dollars</small>
+                        </div>
+                        <span aria-hidden="true">.</span>
+                        <div class="cents">
+                            <input type="number" name="price_cents" min="0" max="99" aria-label="Cents">
+                            <small>Cents</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <div class="form-field">
+                    <label for="features">What features would you like to see in the new product?</label>
+                    <textarea id="features" name="features" rows="6" placeholder="Share the features that matter most to you"></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <fieldset>
+                    <legend>Please rate your level of agreement with the following statements.</legend>
+                    <div class="table-scroll" tabindex="0" aria-label="Agreement rating table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Statement</th>
+                                    <th scope="col">Strongly Disagree</th>
+                                    <th scope="col">Disagree</th>
+                                    <th scope="col">Agree</th>
+                                    <th scope="col">Strongly Agree</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Our products are priced fairly.</th>
+                                    <td><label><input type="radio" name="fair_price" value="strongly-disagree"><span>1</span></label></td>
+                                    <td><label><input type="radio" name="fair_price" value="disagree"><span>2</span></label></td>
+                                    <td><label><input type="radio" name="fair_price" value="agree"><span>3</span></label></td>
+                                    <td><label><input type="radio" name="fair_price" value="strongly-agree"><span>4</span></label></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Our products are high quality.</th>
+                                    <td><label><input type="radio" name="high_quality" value="strongly-disagree"><span>1</span></label></td>
+                                    <td><label><input type="radio" name="high_quality" value="disagree"><span>2</span></label></td>
+                                    <td><label><input type="radio" name="high_quality" value="agree"><span>3</span></label></td>
+                                    <td><label><input type="radio" name="high_quality" value="strongly-agree"><span>4</span></label></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">You would recommend our product to a friend or coworker.</th>
+                                    <td><label><input type="radio" name="recommend" value="strongly-disagree"><span>1</span></label></td>
+                                    <td><label><input type="radio" name="recommend" value="disagree"><span>2</span></label></td>
+                                    <td><label><input type="radio" name="recommend" value="agree"><span>3</span></label></td>
+                                    <td><label><input type="radio" name="recommend" value="strongly-agree"><span>4</span></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit">Submit Survey</button>
+                <button type="reset" class="button-secondary">Reset</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
